@@ -1,0 +1,106 @@
+.DS-manga {
+  padding: 20px;
+  text-align: center; /* Căn giữa dòng chữ */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px; /* Thêm khoảng cách giữa tiêu đề và grid */
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 30px;
+}
+
+.story-item {
+  cursor: pointer;
+  text-align: center;
+}
+
+.story-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.story-item h4 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.story-detail-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto; /* Cho phép cuộn theo chiều dọc nếu nội dung quá dài */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  color: #333;
+}
+
+/* Ẩn thanh cuộn khi cuộn */
+.story-detail-modal::-webkit-scrollbar {
+  display: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.story-detail-modal img {
+  margin-top: 1em;
+  width: 50%; /* Đảm bảo ảnh nhỏ hơn một chút */
+  max-height: 300px; /* Giới hạn chiều cao ảnh */
+  object-fit: contain;
+  margin-bottom: 20px;
+  display: block; /* Đảm bảo ảnh căn giữa */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story-detail-modal h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center; /* Đảm bảo tên truyện căn giữa */
+}
+
+.story-detail-modal p {
+  margin: 10px 0;
+  display: flex; /* Sử dụng Flexbox để các phần tử trong <p> hiển thị cùng dòng */
+  align-items: center; /* Căn giữa nội dung của mỗi dòng */
+}
+
+.story-detail-modal p strong {
+  margin-right: 10px; /* Khoảng cách giữa tiêu đề (ví dụ: "Tác giả:") và nội dung */
+}
+
+.story-detail-modal .url {
+  display: inline; /* Đảm bảo URL không xuống dòng */
+  word-wrap: break-word; /* Đảm bảo URL không bị cắt */
+  color: #007bff; /* Thêm màu cho URL */
+  text-decoration: none; /* Xóa gạch dưới nếu có */
+}
+
+.story-detail-modal .url:hover {
+  text-decoration: underline; /* Thêm gạch dưới khi hover */
+}
+
+
+.story-detail-modal strong {
+  color: #333;
+}

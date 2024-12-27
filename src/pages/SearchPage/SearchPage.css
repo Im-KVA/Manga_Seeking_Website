@@ -1,0 +1,218 @@
+.search-page {
+  padding: 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-title {
+  text-align: center;
+  color: #dddddd;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.ais-SearchBox-input {
+  min-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 0.2em;
+}
+
+.hits-container {
+  display: grid;
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-bottom: 5em;
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.hit-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ais-Hits-item::marker {
+  visibility: hidden;
+  color: black;
+}
+
+.hit-item h3 {
+  color: #0073e6;
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+}
+
+.hit-item p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.hit-item img {
+  max-width: 200px;
+  max-height: 400px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.hit-item-content {
+  margin-left: 2em;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.hit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Phần mô tả ban đầu */
+.description {
+  max-height: 54px; /* Giới hạn chiều cao của mô tả */
+  overflow: hidden; /* Ẩn phần thừa */
+  text-overflow: ellipsis; /* Thêm dấu ba chấm nếu văn bản bị cắt */
+  position: relative;
+}
+
+.description.expanded {
+  max-height: none; /* Hiển thị toàn bộ mô tả khi mở rộng */
+}
+
+/* Nút "Xem thêm" */
+.read-more-button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 1em;
+}
+
+.author {
+  font-weight: bold;
+  margin-top: 1em;
+}
+.artist {
+  font-weight: bold;
+  margin-top: 0.3em;
+}
+.genres {
+  font-weight: bold;
+  margin-top: 0.3em;
+}
+.chapters_count {
+  font-weight: bold;
+  margin-top: 0.3em;
+}
+.status {
+  font-weight: bold;
+  margin-top: 0.3em;
+}
+
+/* Chỉnh sửa container của Pagination để dãn các nút ra xa nhau */
+.ais-Pagination {
+  display: flex;
+  flex-wrap: wrap; /* Đảm bảo Pagination không bị tràn nếu có nhiều trang */
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* Chỉnh sửa các nút trang */
+.ais-Pagination-item {
+  padding: 12px 20px; /* Tăng khoảng cách bên trong các nút */
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.1em;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block; /* Đảm bảo nút trang hiển thị trên cùng một dòng */
+}
+
+/* Màu khi hover trên các nút */
+.ais-Pagination-item:hover {
+  background-color: #0073e6;
+  color: white;
+}
+
+/* Nút đang active (đang được chọn) */
+.ais-Pagination-item--selected {
+  background-color: #0073e6;
+  color: white;
+  font-weight: bold;
+}
+
+/* Các mũi tên điều hướng (Next, Previous) */
+.ais-Pagination-item--previous,
+.ais-Pagination-item--next {
+  font-size: 1.25rem;
+  padding: 12px 20px; /* Tăng khoảng cách bên trong các nút mũi tên */
+}
+
+/* Các nút disabled (không hoạt động) */
+.ais-Pagination-item--disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Dòng phân cách giữa các trang (nếu cần) */
+.ais-Pagination-item--ellipsis {
+  /* padding: 0 10px; */
+  font-size: 1.25rem;
+  color: #888;
+}
+
+.bg-image-left {
+  top: 0%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -4;
+}
+
+.bg-image-right {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -4;
+}
+
+.hit-item-name {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.follow-button {
+  margin-bottom: 1em;
+  margin-left: 1em;
+  padding: 0.1em 0.5em 0.1em; /* Thêm padding để tạo không gian cho chữ */
+  font-weight: bold;
+  color: rgb(226, 43, 73);
+  border: 2px solid transparent; /* Border mặc định là trong suốt */
+  border-radius: 0.1em;
+  background-color: transparent; /* Đảm bảo nền trong suốt */
+}
+
+.follow-button:hover {
+  color: rgb(128, 29, 45);
+  border-color: #6bacee; /* Thay đổi màu border khi hover */
+  box-sizing: border-box;
+  border-radius: 5em;
+}
