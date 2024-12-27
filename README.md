@@ -10,4 +10,4 @@ Currently, two official plugins are available:
 # Preview
 <img src="Screenshot 2024-12-28 013456.png"> 
 <img src="Screenshot 2024-12-28 013537.png"> 
-<img src="Screenshot 2024-12-28 014207.png"> 
+<img src="Screenshot 2024-12-28 015413.png"> 
