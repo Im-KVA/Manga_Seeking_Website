@@ -42,8 +42,8 @@ const saveFollowedStory = async (storyData) => {
 };
 
 const searchClient = algoliasearch(
-  "XYSYH4I2T6",
-  "512d0d5c98c023906c54058c380aa369"
+  "algoliaSearchID",
+  "algoliaSearchID"
 );
 
 const Hit = ({ hit }) => {
